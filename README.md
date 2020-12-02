@@ -1,4 +1,5 @@
 # Welcome to Face Mask Detection 👋
+### 🏠 [Homepage](https://github.com/devil-cyber/Mask-Detection)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/devil-cyber/Mask-Detection/README.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
@@ -7,7 +8,7 @@
 > This is a Faster RCNN based object detection model that detects the person face mask.It can clearly detect face mask in group of people with a great ease.
 ![Demo](video.gif)
 
-### 🏠 [Homepage](https://github.com/devil-cyber/Mask-Detection/README.md)
+
 
 
 
