@@ -8,14 +8,6 @@
 > This is a Faster RCNN based object detection model that detects the person face mask.It can clearly detect face mask in group of people with a great ease.
 ![Demo](video.gif)
 
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 08d0d30f5fd04349bb8ec2bbef97e18441ec0232
-
-
-
 ## Install
 
 ```python
