@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 from PIL import Image
 import matplotlib
-matplotlib.use('TkAgg')
+
 
 PATH_TO_LABELS = os.getcwd() + '/training/labelmap.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(
