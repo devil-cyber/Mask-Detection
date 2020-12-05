@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 from PIL import Image
 import matplotlib
-matplotlib.use('TkAgg')
+ 
 
 st.title("Upload + Face Mask Detection 😊")
 
