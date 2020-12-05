@@ -15,14 +15,18 @@ import matplotlib.pyplot as plt
 
 from PIL import Image
 import matplotlib
+matplotlib.use('TkAgg')
 
+st.title("Upload + Face Mask Detection 😊")
+
+uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 PATH_TO_LABELS = os.getcwd() + '/training/labelmap.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(
     PATH_TO_LABELS, use_display_name=True)
 
 
-st.title("Upload + Face Mask Detection 😊")
+
 
 
 def load_image_into_numpy_array(image):
@@ -99,17 +103,17 @@ def run_inference_for_single_image(image, graph):
     return output_dict
 
 
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+
+
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-
-if st.button('submit'):
-    graph = Graph()
-    image_np = load_image_into_numpy_array(image)
-    # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
-    image_np_expanded = np.expand_dims(image_np, axis=0)
-    output_dict = run_inference_for_single_image(image_np_expanded, graph)
-    vis_util.visualize_boxes_and_labels_on_image_array(
+    st.image(image, caption='Uploaded Image.')
+    if st.button('submit'):
+        graph = Graph()
+        image_np = load_image_into_numpy_array(image)
+        image_np_expanded = np.expand_dims(image_np, axis=0)
+        output_dict = run_inference_for_single_image(image_np_expanded, graph)
+        vis_util.visualize_boxes_and_labels_on_image_array(
         image_np,
         output_dict['detection_boxes'],
         output_dict['detection_classes'],
@@ -118,6 +122,6 @@ if st.button('submit'):
         instance_masks=output_dict.get('detection_masks'),
         use_normalized_coordinates=True,
         line_thickness=8)
-    plt.figure(figsize=(10, 10))
-    plt.imshow(image_np)
-    plt.show()
+        plt.figure(figsize=(10, 10))
+        plt.imshow(image_np)
+        plt.show()
