@@ -17,7 +17,8 @@ from PIL import Image
 import matplotlib
  
 
-st.title("Upload + Face Mask Detection 😊")
+st.title("Face Mask Detection 😊")
+st.write('Upload an jpg or png image and after upload finish click on submit and wait for magic 😀')
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
@@ -106,8 +107,8 @@ def run_inference_for_single_image(image, graph):
 
 
 if uploaded_file is not None:
-    image =  uploaded_file.read()
-    st.image(image, caption='Uploaded Image.')
+    image = Image.open(uploaded_file)
+    
     if st.button('submit'):
         graph = Graph()
         image_np = load_image_into_numpy_array(image)
@@ -122,6 +123,5 @@ if uploaded_file is not None:
         instance_masks=output_dict.get('detection_masks'),
         use_normalized_coordinates=True,
         line_thickness=8)
-        plt.figure(figsize=(10, 10))
-        plt.imshow(image_np)
-        plt.show()
+        PIL_image = Image.fromarray(np.uint8(image_np)).convert('RGB')
+        st.image(PIL_image, caption='Uploaded Image.')
