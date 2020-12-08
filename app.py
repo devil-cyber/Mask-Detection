@@ -108,11 +108,8 @@ def run_inference_for_single_image(image, graph):
 def main():
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        image.convert('RGB')
-        image.save('test.jpg')
-        sti = os.stat('test.jpg')
-        print("size of large",sti.st_size)
-        if  os.path.getsize('test.jpg') > 846608.75:
+        print("size of",sys.getsizeof(image.tobytes()))
+        if sys.getsizeof(image.tobytes()) > 8570722:
             st.title('Image Size is greater than 1mb')
             return 
         if st.button('submit'):
