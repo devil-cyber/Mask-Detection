@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://devil-cyber.github.io/CodingSpace/mask-detection/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: Manikan31004419](https://img.shields.io/twitter/follow/Manikan09676833.svg?style=social)](https://twitter.com/Manikan09676833)
-[![Demo](https://img.shields.io/badge/Demo-Live%20project%20demo-blue)]
+[![Demo](https://img.shields.io/badge/Demo-Live%20project%20demo-blue)](https://share.streamlit.io/devil-cyber/mask-detection/app.py)
 
 > This is a Faster RCNN based object detection model that detects the person face mask.It can clearly detect face mask in group of people with a great ease.
 ![Demo](video.gif)
