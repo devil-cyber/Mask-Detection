@@ -18,7 +18,7 @@ import matplotlib
  
 
 st.title("Face Mask Detection 😊")
-st.write('Upload an jpg or png image and after upload finish click on submit and wait for magic 😀')
+st.write('Upload an jpg or png image < 1MB file and after upload finish click on submit and wait for magic 😀')
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
