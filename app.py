@@ -12,15 +12,15 @@ from distutils.version import StrictVersion
 import datetime
 from io import StringIO
 import matplotlib.pyplot as plt
-
 from PIL import Image
-import matplotlib
+ 
+ 
  
 
 st.title("Face Mask Detection 😊")
 st.write('Upload an jpg or png image < 1MB file and after upload finish click on submit and wait for magic 😀')
 
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+uploaded_file = st.file_uploader("Choose an image...", type=['jpg','jpeg','png'])
 
 PATH_TO_LABELS = os.getcwd() + '/training/labelmap.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(
@@ -105,23 +105,27 @@ def run_inference_for_single_image(image, graph):
 
 
 
-
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    
-    if st.button('submit'):
-        graph = Graph()
-        image_np = load_image_into_numpy_array(image)
-        image_np_expanded = np.expand_dims(image_np, axis=0)
-        output_dict = run_inference_for_single_image(image_np_expanded, graph)
-        vis_util.visualize_boxes_and_labels_on_image_array(
-        image_np,
-        output_dict['detection_boxes'],
-        output_dict['detection_classes'],
-        output_dict['detection_scores'],
-        category_index,
-        instance_masks=output_dict.get('detection_masks'),
-        use_normalized_coordinates=True,
-        line_thickness=8)
-        PIL_image = Image.fromarray(np.uint8(image_np)).convert('RGB')
-        st.image(PIL_image, caption='Uploaded Image.')
+def main():
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file)
+        if sys.getsizeof(image.tobytes()) > 1000000:
+            st.title('Image Size is greater than 1mb')
+            return 
+        if st.button('submit'):
+            graph = Graph()
+            image_np = load_image_into_numpy_array(image)
+            image_np_expanded = np.expand_dims(image_np, axis=0)
+            output_dict = run_inference_for_single_image(image_np_expanded, graph)
+            vis_util.visualize_boxes_and_labels_on_image_array(
+                image_np,
+                output_dict['detection_boxes'],
+                output_dict['detection_classes'],
+                output_dict['detection_scores'],
+                category_index,
+                instance_masks=output_dict.get('detection_masks'),
+                use_normalized_coordinates=True,
+                line_thickness=8)
+            PIL_image = Image.fromarray(np.uint8(image_np)).convert('RGB')
+            st.image(PIL_image, caption='Detected image.')
+         
+main()         
