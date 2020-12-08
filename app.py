@@ -106,7 +106,7 @@ def run_inference_for_single_image(image, graph):
 
 
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
+    image =  uploaded_file.read()
     st.image(image, caption='Uploaded Image.')
     if st.button('submit'):
         graph = Graph()
