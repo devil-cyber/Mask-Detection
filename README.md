@@ -7,7 +7,12 @@
 [![Demo](https://img.shields.io/badge/Demo-Live%20project%20demo-blue)](https://share.streamlit.io/devil-cyber/mask-detection/app.py)
 
 > This is a Faster RCNN based object detection model that detects the person face mask.It can clearly detect face mask in group of people with a great ease.
+
 ![Demo](video.gif)
+
+> Get the Live demo at [Click](https://share.streamlit.io/devil-cyber/mask-detection/app.py). Try to upload image <= 1 MB of size.
+
+![Demo](https://apps.streamlitusercontent.com/devil-cyber/mask-detection/master/app.py/+/media/1a2a9bbe95708d409e9d4449aaea4496c1180e55c1b4cd1a1088a518.jpeg)
 
 ## Install
 
