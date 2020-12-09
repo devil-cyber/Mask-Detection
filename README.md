@@ -44,7 +44,7 @@ python mask_detection.py
 👤 **Manikant Kumar**
 
 * Website: https://devil-cyber.github.io/CodingSpace/
-* Twitter: [@Manikan31004419](https://twitter.com/Manikan31004419)
+* Twitter: [@Manikan31004419](https://twitter.com/Manikan09676833)
 * Github: [@devil-cyber](https://github.com/devil-cyber)
 * LinkedIn: [@manikant-kumar-550998192](https://linkedin.com/in/manikant-kumar-550998192)
 
